@@ -1,0 +1,23 @@
+
+$prime-color: #F65050;
+$white: #FFFFFF;
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu {
+    display: flex;    
+    gap: 1em;
+    li {
+        list-style-type: none;
+        a {
+            transition: all .3s ease;
+            font-size: 1.2em;
+        }
+        a:hover {
+            color: $prime-color;
+        }
+    }
+}
