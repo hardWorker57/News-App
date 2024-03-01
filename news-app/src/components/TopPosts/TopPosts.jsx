@@ -3,6 +3,8 @@ import s from "./TopPosts.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation} from "swiper/modules";
 import SwiperNavButtons from "../SwiperNavButtons";
+import { MdAddBox } from "react-icons/md";
+import { IoMdPerson } from "react-icons/io";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
@@ -20,7 +22,7 @@ function Popular({ data }) {
           }}
         >
       <div className='section_header'>
-        <div className="section_title">New Posts </div>
+        <div className="section_title">Top Posts </div>
           <SwiperNavButtons/>
       </div>
       
@@ -35,6 +37,13 @@ function Popular({ data }) {
                     <img src={data.urlToImage} alt="No image" />
                     <h5>{data.title}</h5>
                     <p className={s.desc}>{data.description}</p>
+                    <div className="article_author">
+                      <div className="author_img"><IoMdPerson /></div>
+                      <div className="author_data">
+                        <h5>{data.author ? data.author : data.source.name}</h5>
+                      </div>
+                      <MdAddBox />
+                    </div>
                   </div>
                 </Link>
               </SwiperSlide>

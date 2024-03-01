@@ -3,6 +3,8 @@ import s from "./Popular.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation} from "swiper/modules";
 import SwiperNavButtons from "../SwiperNavButtons";
+import { MdAddBox } from "react-icons/md";
+import { IoMdPerson } from "react-icons/io";
 
 
 import "swiper/scss";
@@ -16,7 +18,7 @@ function Popular({ data }) {
           slidesPerView={4}
           // navigation
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
         >
@@ -26,8 +28,6 @@ function Popular({ data }) {
       </div>
       
       <div className={s.popular_posts}>
-        
-          
           <div className="wrap">
             {data.map((data, i) => (
               <SwiperSlide>
@@ -36,6 +36,13 @@ function Popular({ data }) {
                     <img src={data.urlToImage} alt="No image" />
                     <h5>{data.title}</h5>
                     <p className={s.desc}>{data.description}</p>
+                    <div className="article_author">
+                      <div className="author_img"><IoMdPerson /></div>
+                      <div className="author_data">
+                        <h5>{data.author ? data.author : data.source.name}</h5>
+                      </div>
+                      <MdAddBox />
+                    </div>
                   </div>
                 </Link>
               </SwiperSlide>

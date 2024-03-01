@@ -1,6 +1,7 @@
 
 $prime-color: #F65050;
 $white: #FFFFFF;
+$grey: #D9D9D9;
 
 body {
     margin: 0;
@@ -76,9 +77,32 @@ ul {
         outline: none;
     }
 }
-.Main {
-    height: 90vh;
+.article_author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1em;
+    background-color: #F5F5F5;
+    border-radius: 1em;
+    transition: .3s ease;
+}
+.article_author:hover {
+    background-color: #cccccc;
+}
+.author_data {
+    h5 {
+        padding-inline: .8em;
+    }
 }
 .Footer {
-    margin-top: 30em;
+    padding: 3em 0;
+}
+.current_weather {
+    padding: 1.5em;
+    background-color: #FFFFFF;
+    border-radius: 1em;
+    width: 35em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

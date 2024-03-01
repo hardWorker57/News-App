@@ -1,0 +1,106 @@
+.Weather {
+    background-color: #D9D9D9;
+    padding: 4em 0;
+}
+.current_weather_data {
+    display: flex;
+    justify-content: space-between;
+    .current_weather_temp {
+        font-size: 2.4em;
+        display: flex;
+        align-items: center;
+    }
+}
+.days {
+    display: flex;
+    justify-content: space-between;
+    .day {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color:#F5F5F5;
+        gap: .6em;
+        width: 3rem;
+        border-radius: .6em;
+        font-size: 12px;
+        padding: .7em .3em;
+        .day_icon {
+            font-size: 2em;
+            color: #FCC54C;
+        }
+        .day_time {
+            display: flex;
+            font-size: .8em;
+            gap: 1em;
+            justify-content: space-between;
+        }
+    }
+}
+.other_weathers {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1.4em;
+    .location_weather {
+        border-radius: 1em;
+        padding: 1.5em;
+        color: #FFFFFF;
+        height: 10em;
+        width: 16em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all .35s ease;
+        &:hover {
+            transform: scale(1.04) skewY(3.5deg);
+        }
+    }
+    .location_weather:first-child {
+        background: rgb(251,55,28);
+        background-image: linear-gradient(163deg, rgba(251,55,28,1) 0%, rgba(251,202,28,.6) 100%), url(04.png);
+        &:hover {
+            background-position: right;
+        }
+    }
+    .location_weather:nth-child(2) {
+        background: rgb(28,50,251);
+        background-image: linear-gradient(163deg, rgba(28,50,251,1) 0%, rgba(28,251,224,.6) 100%), url(03.png);
+        &:hover {
+            background-position: right;
+        }
+    }
+    .location_weather:nth-child(4) {
+        background: rgb(7,156,39);
+        background-image: linear-gradient(163deg, rgba(7,156,39,1) 0%, rgba(192,255,113,.6) 100%), url(12.png);
+        &:hover {
+            background-position: right;
+        }
+    }
+    .location_weather:last-child {
+        background: rgb(113,28,251);
+        background-image: linear-gradient(163deg, rgba(113,28,251,1) 0%, rgba(251,28,148,.6) 100%), url(01.png);
+        &:hover {
+            background-position: right;
+        }
+    }
+    .location_data {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .location {
+            padding: 0;
+        }
+    }
+    .temperature {
+        display: flex;
+        justify-content: center;
+        font-size: 2.4em;
+    }
+}
+.container {
+    max-width: 85%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+}
