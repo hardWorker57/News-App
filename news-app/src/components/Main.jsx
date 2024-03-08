@@ -6,19 +6,21 @@ import TopPosts from "./TopPosts/TopPosts";
 import Football from "./Fooball/Football";
 import NewPosts from "./NewPosts/NewPosts";
 import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Main = () => {
-
-  gsap.from(".Main", {
-    y: 300,
-    opacity: 0
-  })
-  gsap.to(".Main", {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    delay: .5
-  })
+  
+  useEffect(() => {
+    gsap.from('body', {
+      y: 100,
+      opacity: 0
+    })
+    gsap.to('body', {
+      y: 0,
+      opacity: 1,
+      duration: .5
+    })
+  }, [])
 
     // const POPULAR_NEWS = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=959df21719154e489073af771f4db767';
     // const POPULAR_NEWS = 'https://newsapi.org/v2/everything?q=Apple&from=2024-02-15&sortBy=popularity&apiKey=959df21719154e489073af771f4db767';
@@ -72,7 +74,6 @@ const Main = () => {
               .then((data) => {
                   if (data) {
                     setWeather(data);
-                    console.log(data)
                   }
               });
       }

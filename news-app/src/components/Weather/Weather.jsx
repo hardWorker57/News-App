@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import s from './Weather.module.scss'
 import { gsap } from "gsap";
 import { FaSun } from "react-icons/fa";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 
 
 const Weather = () => {
-  
-  gsap.from((".current_weather"), {opacity: 0, y: 100,})
-  
-  gsap.to((".current_weather"), {opacity: 1, y: 0, duration: .8, delay: .6,});
+  const weather = useRef()
+  useEffect(() => {
+    gsap.from((".current_weather"), {opacity: 0, y: 100,})
+    
+    gsap.to((".current_weather"), {opacity: 1, y: 0, duration: .8, delay: 1});
 
-  gsap.from((".other_weathers_wrap"), {opacity: 0, x: 100,})
+    gsap.from((".other_weathers_wrap"), {opacity: 0, x: 100,})
 
-  gsap.to((".other_weathers_wrap"), {opacity: 1, x: 0, duration: .8, delay: .6,});
+    gsap.to((".other_weathers_wrap"), {opacity: 1, x: 0, duration: .8, delay: 1});
+  }, [])
 
   return (
     <div className={s.Weather}>

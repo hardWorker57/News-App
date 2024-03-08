@@ -4,10 +4,11 @@ import { useParams } from 'react-router-dom'
 
 const Article = () => {
 
-  const News = `https://newsapi.org/v2/everything?q=Biden&apiKey=959df21719154e489073af771f4db767`;
-  const [currentArticle, setArticle] = useState([]);
+
   const { title } = useParams();
-  const [articlesNum, setArticlesNum] = useState(0);
+  const News = `https://newsapi.org/v2/everything?q=${title.replaceAll('%20', ' ')}&apiKey=959df21719154e489073af771f4db767`;
+  const [currentArticle, setArticle] = useState([]);
+  // const [articlesNum, setArticlesNum] = useState(0);
   const pages = 0;
   useEffect(() => {
     getNews();
@@ -18,7 +19,8 @@ const Article = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          setArticle(data.articles[`${pages}`]);
+          // let arr = data.articles;
+          setArticle(data.articles[0]);
         }
     });
   }
